@@ -1,2 +1,2 @@
-# myping
-ping to multiple host
+# snippet
+- myping : ping to multiple host
