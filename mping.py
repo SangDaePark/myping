@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env pyton
 # -*- coding: utf-8 -*-
 
 from __future__ import division, print_function
@@ -21,10 +21,12 @@ STD_INPUT_HANDLE   = -10
 STD_OUTPUT_HANDLE  = -11
 STD_ERROR_HANDLE   = -12
 
+'''
 std_out_handle = ctypes.windll.kernel32.GetStdHandle(STD_OUTPUT_HANDLE)
  
 def set_color(color, handle=std_out_handle):
     bool = ctypes.windll.kernel32.SetConsoleTextAttribute(handle, color)
+'''
 
 ICMP_ECHOREPLY = 0
 ICMP_ECHO = 8
@@ -176,7 +178,7 @@ def mping(list):
     for k, v in pingResult.items() :
         total = total +1
         if v[1] != 0 :
-            logger.debug("{:15s} : {:6.0f}".format(k, (v[1]-v[0])*1000))
+            logger.info("{:15s} : {:6.0f}".format(k, (v[1]-v[0])*1000))
             alive = alive + 1
         else :
             logger.info("{:15s} : ......".format(k, (v[1]-v[0])*1000))
